@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using GoodBooks.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace GoodBooks.Web
 {
@@ -26,10 +28,10 @@ namespace GoodBooks.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<GoodBooksDbContext>(opts => {
+            services.AddDbContext<GoodBookDbContext>(opts => {
                 opts.EnableDetailedErrors();
                 opts.UseNpgsql(Configuration.GetConnectionString("goodBooks.dev"));
-            })
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

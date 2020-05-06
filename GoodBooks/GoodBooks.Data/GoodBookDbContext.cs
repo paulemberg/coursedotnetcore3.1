@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GoodBooks.Data
 {
-    public class GoodBookDbContext : DbContext{
+    public class GoodBookDbContext : DbContext {
     
     public GoodBookDbContext(){}
 
