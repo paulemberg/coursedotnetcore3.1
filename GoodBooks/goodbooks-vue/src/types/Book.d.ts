@@ -1,4 +1,4 @@
-export default interface IBook{
+export default interface IBook {
     id: number;
     createdOn: Date;
     updateOn: Date;
